@@ -377,35 +377,59 @@ High-fidelity imaging of live microorganisms is essential for understanding dyna
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- TODO: Replace with your research result images -->
-        <img src="static/images/simulation_swirl_v3.jpg" alt="First research result visualization" loading="lazy"/>
+        <img src="overview_v4.jpg" alt="First research result visualization" loading="lazy"/>
         <!-- TODO: Replace with description of this result -->
         <h2 class="subtitle has-text-centered">
-          Comparison of ST-FP reconstructions under different frame rates with simulated swirl motion. 
+          
+        (a) By leveraging our fast and stable illumination hardware, ST-FP captures high-speed raw data and reconstructs high-fidelity amplitude, phase, and velocity fields. 
+        (b) Schematic of the ST-FP system, based on a shift-register-controlled LED panel for fast and stable illumination. 
+        (c) LED module design using an array of shift-register LED drivers. 
+        This configuration allows the system to simultaneously illuminate all LEDs based on preloaded data, which maximizes the effective brightness of each LED. 
+        (d) Comparison of LED control logics under multiplexed illumination. Conventional sequential refreshing with short exposures, causing serious noise. 
+        Sequential refreshing with long exposures (low fps) leads to motion blur and reduced temporal resolution. Our static shift-register control (high fps) enables high-contrast, high-SNR imaging without flicker. 
+        (e) ST-FP reconstruction framework: the optimization problem is split into object and flow subproblems, solved alternately using automatic differentiation and optical flow solvers. 
+        (f) GPU acceleration results: compared to the old implementation, our GPU-accelerated version dramatically reduces computational time for long-sequence reconstructions.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/PWM_analysis.jpg" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+
+
+          Visualization of LED scanning mode and pulse-width modulation (PWM)–based
+brightness control. (a) The designed illumination pattern, where each column contains LEDs
+set to different brightness levels. (b) Illustration of PWM signals with varying duty cycles: a
+lower duty cycle (top) results in shorter LED on-time, while a higher duty cycle (bottom) in-
+creases the on-time and thus the perceived brightness. (c) Eight representative frames captured
+using a short exposure time (10 μs ), demonstrating the scanning behavior of the LED panel. In
+each frame, only a single column is active due to the panel’s internal column-scanning scheme.
+Within each active column, LEDs with higher brightness settings are more frequently visible,
+consistent with their longer PWM duty cycles. This supports the presence of both column-wise
+scanning and PWM-based brightness modulation.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/static/images/simulation_swirl_v3.jpg" alt="Third research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+         Comparison of ST-FP reconstructions under different frame rates with simulated swirl motion. 
           (a) Amplitude reconstructions from ST-FP at low fps, high fps (ours), and ground truth for selected frames. 
           Insets in the lower right corners of the amplitude panels show the corresponding raw data for low-fps and high-fps cases. 
           (b) Phase reconstructions from ST-FP at low fps, high fps, and ground truth for selected frames. 
           (c) Accuracy metrics, including SSIM and MSE for amplitude and phase reconstructions across frames, comparing low-fps and high-fps results.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
+          Overview of the high-performance ST-FP system. 
        </h2>
      </div>
      <div class="item">
       <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
+      <img src="static/images/sbpt_usaf_v2.jpg" alt="Fourth research result visualization" loading="lazy"/>
       <h2 class="subtitle has-text-centered">
-        Fourth image description.
+                  Comparison of ST-FP under different frame rate conditions using a moving phase target. 
+          (a) Raw intensity image of USAF phase target from a single central LED under the static condition. 
+          (b) Zoomed-in region of interest (ROI) from (a). (c) Reference phase reconstruction from traditional FP. 
+          (d) Raw intensity images acquired at low fps. (e) Phase reconstructions from ST-FP using the low-fps dataset in (d). 
+          (f) Raw intensity images acquired at high fps. (g) Phase reconstructions from ST-FP using the high-fps dataset in (f).
       </h2>
     </div>
   </div>
